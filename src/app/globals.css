@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors — Kuning Qurantiva #FEDD01 */
+  --color-primary-50: #fffce5;
+  --color-primary-100: #fff8cc;
+  --color-primary-200: #fff099;
+  --color-primary-300: #ffe866;
+  --color-primary-400: #fee033;
+  --color-primary-500: #fedd01;
+  --color-primary-600: #d4b800;
+  --color-primary-700: #a89300;
+  --color-primary-800: #7a6d00;
+  --color-primary-900: #5c5200;
+  --color-primary-950: #3d3500;
+
+  /* Accent — Dark Navy #1C1C4E */
+  --color-accent-50: #f0f0f7;
+  --color-accent-100: #e0e0ef;
+  --color-accent-200: #c7c7df;
+  --color-accent-300: #a0a0c8;
+  --color-accent-400: #7070a5;
+  --color-accent-500: #4d4d80;
+  --color-accent-600: #383868;
+  --color-accent-700: #2a2a5a;
+  --color-accent-800: #1c1c4e;
+  --color-accent-900: #131338;
+  --color-accent-950: #0a0a24;
+
+  /* Neutral — Cream/Warm */
+  --color-cream: #f9f8f6;
+  --color-surface: #ffffff;
+
+  /* Fonts */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", serif;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-scale-in: scale-in 0.4s ease-out forwards;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-accent-900);
+  font-family: var(--font-sans);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

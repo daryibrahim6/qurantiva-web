@@ -1,35 +1,34 @@
-import { ClipboardList, UserCheck, BookOpen } from "lucide-react";
+import { ClipboardList, MessageSquare, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const STEPS = [
   {
     icon: ClipboardList,
-    title: "Daftar",
-    desc: "Isi form pendaftaran di halaman daftar. Pilih paket yang mau kamu coba.",
+    title: "Isi Formulir",
+    desc: "Isi formulir pendaftaran singkat di halaman website. Pilih program dan paket kelas yang ingin Anda ambil.",
     benefits: [
-      "Form cuma 2 menit",
-      "Pilih paket sesuai kebutuhan",
-      "Bayar setelah cocok",
+      "Formulir cepat hanya 2 menit",
+      "Pilih paket sesuai kebutuhan Anda",
     ],
   },
   {
-    icon: UserCheck,
-    title: "Pilih mentor",
-    desc: "Tim kami match kamu dengan mentor yang cocok. Bisa request ganti kalau gak cocok.",
+    icon: MessageSquare,
+    title: "Konfirmasi & Bayar via WA",
+    desc: "Setelah isi form, Anda akan langsung terhubung ke WhatsApp Admin untuk menyepakati jadwal tetap, menentukan gender tutor, dan menyelesaikan pembayaran.",
     benefits: [
-      "Mentor sesuai level kamu",
-      "Bisa ganti kapan saja",
-      "Seleksi dari pesantren ternama",
+      "Konfirmasi jadwal fleksibel langsung di WA",
+      "Pembayaran aman via transfer/Qris",
+      "Garansi kecocokan gender tutor",
     ],
   },
   {
     icon: BookOpen,
-    title: "Mulai ngaji",
-    desc: "Jadwalkan sesi pertama via Zoom atau WhatsApp Call. Selesai. Tinggal ngaji.",
+    title: "Placement Test & Mulai Ngaji",
+    desc: "Setelah pembayaran dikonfirmasi, Anda akan melakukan placement test (tes kemampuan) sesuai opsi yang Anda pilih. Selanjutnya, pengajar khusus Anda akan menghubungi via WA untuk mengirim akses kelas dan mulai mengaji!",
     benefits: [
-      "Jadwal fleksibel",
-      "Via Zoom atau WhatsApp",
-      "Langsung 1-on-1",
+      "Placement test setelah bayar untuk pemetaan materi",
+      "Dihubungi langsung oleh pengajar via WA",
+      "Belajar interaktif via Zoom atau Google Meet",
     ],
   },
 ];

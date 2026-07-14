@@ -51,11 +51,6 @@ export const FEATURES = [
 
 export const PROGRAMS = [
   {
-    title: "Kelas Halaqah",
-    desc: "Kelas gratis yang dilaksanakan sewaktu-waktu untuk komunitas Qurantiva, yang khusus diperuntukkan untuk Alumni yang pernah belajar di sini.",
-    badge: "Gratis",
-  },
-  {
     title: "Kelas Private",
     desc: "Kelas intensif dengan bimbingan 1-on-1, kurikulum terarah, dan fleksibel. Setiap siswa dipastikan mendapat pendampingan sesuai target dan ritme belajar.",
     badge: "Populer",
@@ -98,7 +93,8 @@ export const METHODS = [
 export const PRICING = [
   {
     name: "Paket I",
-    price: "Rp 300.000",
+    price: "Rp 150.000",
+    originalPrice: "Rp 300.000",
     period: "/paket",
     features: [
       "4x pertemuan",
@@ -114,7 +110,8 @@ export const PRICING = [
   },
   {
     name: "Paket II",
-    price: "Rp 600.000",
+    price: "Rp 300.000",
+    originalPrice: "Rp 600.000",
     period: "/paket",
     features: [
       "8x pertemuan",
@@ -131,7 +128,8 @@ export const PRICING = [
   },
   {
     name: "Paket III",
-    price: "Rp 800.000",
+    price: "Rp 400.000",
+    originalPrice: "Rp 800.000",
     period: "/paket",
     features: [
       "12x pertemuan",
@@ -148,9 +146,11 @@ export const PRICING = [
   },
   {
     name: "Kelas Berkelompok",
-    price: "Rp 300.000",
+    price: "Rp 150.000",
+    originalPrice: "Rp 300.000",
     period: "/program",
     features: [
+      "10x pertemuan",
       "Belajar dalam kelompok kecil",
       "Suasana interaktif bersama teman",
       "Jadwal tetap",
@@ -175,20 +175,6 @@ export const PRICING = [
     ],
     highlight: false,
     ctaText: "Coba Sekarang",
-  },
-  {
-    name: "Kelas Halaqah",
-    price: "Gratis",
-    period: "",
-    features: [
-      "Khusus alumni Qurantiva",
-      "Qurantiva Circle",
-      "Teman baru sesama santri",
-      "Gratis Materi",
-      "Kelas bersama Ustadz/ah",
-    ],
-    highlight: false,
-    ctaText: "Gabung Sekarang",
   },
 ];
 
@@ -217,10 +203,6 @@ export const COMPARISON = {
     {
       name: "Starter",
       values: [true, true, false, false, false, true, false, false, true, false],
-    },
-    {
-      name: "Halaqah",
-      values: [false, false, true, false, false, true, false, false, false, true],
     },
   ],
 };
@@ -340,7 +322,7 @@ export const FAQS = [
   {
     question: "Apakah ada program lanjutan setelah saya menyelesaikan kelas di Qurantiva?",
     answer:
-      "Ada. Khusus untuk seluruh alumni yang pernah belajar di Qurantiva, kami menyediakan Kelas Halaqah secara gratis. Program ini dirancang khusus sebagai wadah bagi para alumni untuk terus menjaga kelancaran bacaan, murajaah bersama, dan tetap terhubung dengan lingkungan belajar yang positif tanpa dipungut biaya tambahan.",
+      "Ada. Khusus untuk seluruh alumni yang pernah belajar di Qurantiva, kami menyediakan komunitas Qurantiva Circle sebagai wadah untuk terus menjaga kelancaran bacaan, murajaah bersama, dan tetap terhubung dengan lingkungan belajar yang positif.",
   },
   {
     question: "Apa saja yang perlu saya siapkan sebelum kelas dimulai?",
@@ -376,9 +358,9 @@ export const PEKERJAAN_OPTIONS = [
 ];
 
 export const PAKET_OPTIONS = [
-  "Paket I: Rp 300.000",
-  "Paket II: Rp 600.000",
-  "Paket III: Rp 800.000",
-  "Kelas Berkelompok: Rp 300.000",
+  "Paket I: Rp 150.000",
+  "Paket II: Rp 300.000",
+  "Paket III: Rp 400.000",
+  "Kelas Berkelompok: Rp 150.000",
   "Kelas Starter: Rp 25.000",
 ];

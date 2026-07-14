@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Amiri } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import "./globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -84,6 +85,7 @@ export default function RootLayout({
       className={cn(jakartaSans.variable, amiri.variable, "h-full antialiased scroll-smooth")}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}
+        <FloatingWhatsApp />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

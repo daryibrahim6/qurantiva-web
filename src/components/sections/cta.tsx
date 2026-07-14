@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight, Radio } from "lucide-react";
 import { CONTACTS } from "@/lib/constants";
 import { buildWaLink } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ export function Cta() {
           biasanya balas dalam 10 menit di jam aktif.
         </p>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap">
           <Link
             href="/daftar"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-7 py-3.5 text-base font-semibold text-accent-900 shadow-lg transition-all duration-300 hover:bg-primary-400"
@@ -54,6 +54,15 @@ export function Cta() {
           >
             <FaWhatsapp className="size-5" />
             Chat WhatsApp dulu
+          </a>
+          <a
+            href="https://whatsapp.com/channel/0029VbCqE6gGE56os4JX7Y0h"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/20 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:border-primary-500/40 hover:text-primary-500"
+          >
+            <Radio className="size-5" />
+            Gabung Channel WA
           </a>
         </div>
 

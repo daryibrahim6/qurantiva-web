@@ -5,7 +5,6 @@ import { PROGRAMS } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
 
 const PROGRAM_POSTERS = [
-  "/assets/programs/halaqah.png",
   "/assets/programs/private.png",
   "/assets/programs/starter.png",
   "/assets/programs/berkelompok.png",
@@ -20,11 +19,11 @@ export function Programs() {
             Pilih program
           </h2>
           <p className="mt-3 max-w-2xl text-lg text-accent-600">
-            Empat pilihan. Mulai dari yang gratis sampai privat intensif.
+            Tiga pilihan. Mulai dari Rp 25.000 sampai privat intensif.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PROGRAMS.map((program, index) => (
             <div
               key={program.title}

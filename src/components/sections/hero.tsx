@@ -54,7 +54,7 @@ export function Hero() {
 
             <div className="mt-12 flex items-center gap-6">
               <div className="flex flex-col">
-                <p className="text-3xl font-bold text-primary-500 sm:text-4xl">5</p>
+                <p className="text-3xl font-bold text-primary-500 sm:text-4xl">Ummi</p>
                 <p className="mt-1 text-sm text-accent-300">Metode Ngaji</p>
               </div>
               <div className="h-12 w-px bg-accent-700" />

@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { Check, Star } from "lucide-react";
 import { motion } from "motion/react";
-import { PRICING, CONTACTS } from "@/lib/constants";
-import { buildWaLink, cn } from "@/lib/utils";
+import { PRICING } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 export function Pricing() {
   return (
@@ -15,20 +15,12 @@ export function Pricing() {
             Harga paket
           </h2>
           <p className="mt-3 text-lg text-accent-600">
-            Mulai dari gratis. Kelas starter cuma Rp 25.000 buat coba-coba.
+            Mulai dari Rp 25.000. Kelas starter cuma buat coba-coba.
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PRICING.map((paket, index) => {
-            const isFree = paket.price === "Gratis";
-            const waLink = isFree
-              ? buildWaLink(
-                  CONTACTS.waPrimary,
-                  "Assalamualaikum, saya ingin gabung Kelas Halaqah Qurantiva.",
-                )
-              : null;
-
             return (
               <motion.div
                 key={paket.name}
@@ -57,14 +49,26 @@ export function Pricing() {
                 <h3 className="mb-2 text-xl font-bold text-accent-900">
                   {paket.name}
                 </h3>
-                <div className="mb-6 flex items-baseline gap-1">
-                  <span className="text-3xl font-bold text-accent-800">
-                    {paket.price}
-                  </span>
-                  {paket.period && (
-                    <span className="text-base text-primary-600">
-                      {paket.period}
+                <div className="mb-6 flex flex-col gap-1">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-accent-800">
+                      {paket.price}
                     </span>
+                    {paket.period && (
+                      <span className="text-base text-primary-600">
+                        {paket.period}
+                      </span>
+                    )}
+                  </div>
+                  {paket.originalPrice && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-base text-accent-400 line-through">
+                        {paket.originalPrice}
+                      </span>
+                      <span className="rounded-full bg-primary-500 px-2 py-0.5 text-xs font-bold text-accent-900">
+                        50% OFF
+                      </span>
+                    </div>
                   )}
                 </div>
 
@@ -80,28 +84,17 @@ export function Pricing() {
                   ))}
                 </ul>
 
-                {isFree ? (
-                  <a
-                    href={waLink ?? "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center rounded-full border-2 border-accent-200 px-4 py-3 text-base font-semibold text-accent-800 transition-all hover:border-primary-500 hover:bg-primary-50"
-                  >
-                    {paket.ctaText}
-                  </a>
-                ) : (
-                  <Link
-                    href={`/daftar?paket=${encodeURIComponent(paket.name)}`}
-                    className={cn(
-                      "inline-flex w-full items-center justify-center rounded-full px-4 py-3 text-base font-semibold transition-all hover:shadow-lg",
-                      paket.highlight
-                        ? "bg-primary-500 text-accent-900 hover:bg-primary-600"
-                        : "border-2 border-accent-200 text-accent-800 hover:border-primary-500 hover:bg-primary-50",
-                    )}
-                  >
-                    {paket.ctaText}
-                  </Link>
-                )}
+                <Link
+                  href={`/daftar?paket=${encodeURIComponent(paket.name)}`}
+                  className={cn(
+                    "inline-flex w-full items-center justify-center rounded-full px-4 py-3 text-base font-semibold transition-all hover:shadow-lg",
+                    paket.highlight
+                      ? "bg-primary-500 text-accent-900 hover:bg-primary-600"
+                      : "border-2 border-accent-200 text-accent-800 hover:border-primary-500 hover:bg-primary-50",
+                  )}
+                >
+                  {paket.ctaText}
+                </Link>
               </motion.div>
             );
           })}

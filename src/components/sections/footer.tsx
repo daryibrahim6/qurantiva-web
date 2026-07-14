@@ -1,6 +1,6 @@
 import { CONTACTS, NAV_LINKS, PROGRAMS } from "@/lib/constants";
 import { FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
-import { Mail } from "lucide-react";
+import { Mail, Radio } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,6 +19,11 @@ const SOCIAL_LINKS = [
     icon: <FaTiktok className="size-4" />,
     href: "https://www.tiktok.com/@qurantiva.id",
     label: "TikTok",
+  },
+  {
+    icon: <Radio className="size-4" />,
+    href: "https://whatsapp.com/channel/0029VbCqE6gGE56os4JX7Y0h",
+    label: "WhatsApp Channel",
   },
   {
     icon: <Mail className="size-4" />,

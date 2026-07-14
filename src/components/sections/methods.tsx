@@ -10,8 +10,9 @@ export function Methods() {
             Metode yang dipakai
           </h2>
           <p className="mt-3 max-w-2xl text-lg text-accent-600">
-            Lima metode terstandar. Mentor akan menyesuaikan dengan level
-            kemampuanmu.
+            Qurantiva menggunakan Metode Ummi secara penuh. Metode terstandar
+            yang berfokus pada pendekatan yang ramah, tartil, dan menyenangkan
+            untuk segala usia.
           </p>
         </div>
 

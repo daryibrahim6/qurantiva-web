@@ -23,7 +23,7 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
 
   useEffect(() => {
     const sections = items
-      .map((item) => document.querySelector(item.url))
+      .map((item) => document.querySelector(item.url.replace(/^\//, "")))
       .filter(Boolean) as HTMLElement[];
 
     if (sections.length === 0) return;

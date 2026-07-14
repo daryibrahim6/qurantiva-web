@@ -1,8 +1,8 @@
-import { Award, ShieldCheck, GraduationCap, Building2 } from "lucide-react";
+import { Award, Building2, GraduationCap, Star } from "lucide-react";
 import { CERTIFICATES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-const ICONS = [Award, ShieldCheck, GraduationCap, Building2];
+const ICONS = [Award, Building2, GraduationCap, Star];
 const CARD_SPANS = [
   "sm:col-span-2",
   "sm:col-span-1",

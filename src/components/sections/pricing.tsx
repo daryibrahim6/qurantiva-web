@@ -19,7 +19,7 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PRICING.map((paket, index) => {
             const isFree = paket.price === "Gratis";
             const waLink = isFree

@@ -8,12 +8,12 @@ import { TubelightNavBar } from "@/components/ui/tubelight-navbar";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { name: "Beranda", url: "#hero", icon: Home },
-  { name: "Keunggulan", url: "#features", icon: Sparkles },
-  { name: "Program", url: "#programs", icon: BookOpen },
-  { name: "Paket", url: "#pricing", icon: Tag },
-  { name: "Mentor", url: "#mentors", icon: Users },
-  { name: "FAQ", url: "#faq", icon: HelpCircle },
+  { name: "Beranda", url: "/#hero", icon: Home },
+  { name: "Keunggulan", url: "/#features", icon: Sparkles },
+  { name: "Program", url: "/#programs", icon: BookOpen },
+  { name: "Paket", url: "/#pricing", icon: Tag },
+  { name: "Mentor", url: "/#mentors", icon: Users },
+  { name: "FAQ", url: "/#faq", icon: HelpCircle },
 ];
 
 const DARK_SELECTORS = ["#hero", "#rating", "#mentors", "#community", "#cta", "footer"];

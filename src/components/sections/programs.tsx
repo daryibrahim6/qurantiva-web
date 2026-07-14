@@ -30,7 +30,7 @@ export function Programs() {
               key={program.title}
               className="group flex flex-col overflow-hidden rounded-2xl border border-accent-100 bg-white transition-all duration-300 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-500/5"
             >
-              <div className="relative aspect-[3/4] w-full">
+              <div className="relative aspect-square w-full">
                 <Image
                   src={PROGRAM_POSTERS[index]}
                   alt={program.title}

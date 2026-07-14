@@ -211,6 +211,10 @@ export const COMPARISON = {
       values: [true, true, true, true, true, true, true, true, false, false],
     },
     {
+      name: "Berkelompok",
+      values: [false, false, true, true, false, true, true, false, false, false],
+    },
+    {
       name: "Starter",
       values: [true, true, false, false, false, true, false, false, true, false],
     },

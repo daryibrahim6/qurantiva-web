@@ -3,16 +3,15 @@ import { Check } from "lucide-react";
 import { MENTOR_QUALITIES } from "@/lib/constants";
 
 const TUTOR_PHOTOS = [
-  { src: "/assets/tutors/tutor-1.png", offset: "lg:mt-0" },
-  { src: "/assets/tutors/tutor-2.png", offset: "lg:mt-12" },
-  { src: "/assets/tutors/tutor-3.png", offset: "lg:mt-6" },
+  "/assets/tutors/tutor-1.png",
+  "/assets/tutors/tutor-3.png",
 ];
 
 export function Mentors() {
   return (
     <section id="mentors" aria-labelledby="mentors-heading" className="bg-accent-900 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-stretch">
           <div>
             <h2 id="mentors-heading" className="text-3xl font-bold text-white sm:text-4xl">
               Siapa yang ngajarin kamu
@@ -40,18 +39,18 @@ export function Mentors() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 lg:gap-4">
-            {TUTOR_PHOTOS.map((photo, index) => (
+          <div className="hidden grid-cols-2 gap-3 lg:grid lg:gap-4">
+            {TUTOR_PHOTOS.map((src, index) => (
               <div
-                key={photo.src}
-                className={`relative aspect-[3/4] overflow-hidden rounded-2xl border border-accent-700 ${photo.offset}`}
+                key={src}
+                className="relative h-full overflow-hidden rounded-2xl border border-accent-700"
               >
                 <Image
-                  src={photo.src}
+                  src={src}
                   alt={`Pengajar Qurantiva ${index + 1}`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 33vw, 25vw"
+                  sizes="25vw"
                 />
               </div>
             ))}

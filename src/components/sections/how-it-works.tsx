@@ -40,7 +40,7 @@ export function HowItWorks() {
       aria-labelledby="how-heading"
       className="bg-white py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <h2
             id="how-heading"
@@ -53,7 +53,7 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="relative mx-auto mb-8 w-full max-w-4xl">
+        <div className="relative mx-auto mb-8 w-full max-w-7xl">
           <div
             aria-hidden="true"
             className="absolute left-[16.6667%] top-1/2 h-0.5 w-[66.6667%] -translate-y-1/2 bg-accent-200"
@@ -70,14 +70,14 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
           {STEPS.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.title}
                 className={cn(
-                  "rounded-2xl border border-accent-100 bg-cream p-6 transition-all duration-300",
+                  "rounded-2xl border border-accent-100 bg-cream p-7 transition-all duration-300",
                   "hover:border-primary-300 hover:shadow-lg hover:shadow-primary-500/5",
                 )}
               >

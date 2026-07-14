@@ -2,9 +2,7 @@ export const CONTACTS = {
   instagram: "https://instagram.com/qurantiva.id",
   email: "qurantiva@gmail.com",
   waPrimary: "6288231134417",
-  waAlt: "6285882893569",
   waPrimaryDisplay: "+62 882-3113-4417",
-  waAltDisplay: "+62 858-8289-3569",
 };
 
 export const NAV_LINKS = [
@@ -342,7 +340,7 @@ export const FAQS = [
   {
     question: "Apakah waktu belajar bisa berubah-ubah setiap minggu?",
     answer:
-      "Tergantung jenis kelas yang Anda pilih. Untuk Kelas Privat dan Kelas Starter, jadwalnya bersifat fleksibel dan bisa disesuaikan dengan waktu luang Anda. Namun, untuk Kelas Berkelompok dan kelas Halaqah, jadwalnya sudah ditetapkan secara tetap sejak awal program demi kenyamanan bersama seluruh peserta dalam kelompok tersebut.",
+      "Tergantung jenis kelas yang Anda pilih. Untuk Kelas Privat dan Kelas Starter, jadwalnya bersifat fleksibel dan bisa disesuaikan dengan waktu luang Anda. Namun, untuk Kelas Berkelompok, jadwalnya sudah ditetapkan secara tetap sejak awal program demi kenyamanan bersama seluruh peserta dalam kelompok tersebut.",
   },
 ];
 

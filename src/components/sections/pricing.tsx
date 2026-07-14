@@ -35,7 +35,7 @@ export function Pricing() {
                 className={cn(
                   "relative flex flex-col rounded-2xl border-2 bg-white p-6",
                   paket.highlight
-                    ? "border-primary-500 shadow-xl shadow-primary-500/10 lg:-translate-y-3"
+                    ? "border-primary-500 shadow-xl shadow-primary-500/10 lg:-translate-y-3 lg:col-span-2"
                     : "border-accent-100",
                 )}
               >

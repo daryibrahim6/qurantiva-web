@@ -16,7 +16,7 @@ const NAV_ITEMS = [
   { name: "FAQ", url: "/#faq", icon: HelpCircle },
 ];
 
-const DARK_SELECTORS = ["#hero", "#rating", "#mentors", "#community", "#cta", "footer"];
+const DARK_SELECTORS = ["#hero", "#rating", "#rating-gallery", "#mentors", "#community", "#cta", "footer"];
 
 export function Navbar() {
   const [overDark, setOverDark] = useState(true);
@@ -65,7 +65,7 @@ export function Navbar() {
             fill
             sizes="100vw"
             className={cn(
-              "object-cover object-left scale-105 origin-left",
+              "object-cover object-left scale-x-[1.06] scale-y-[1.04] origin-left",
               overDark ? "opacity-0" : "opacity-100",
             )}
             priority

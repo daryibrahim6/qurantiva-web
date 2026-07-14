@@ -26,7 +26,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 3,
     name: "Santri Dewasa",
-    role: "Kelas Halaqah",
+    role: "Kelas Berkelompok",
     content:
       "Jadwal fleksibelnya bener-bener membantu. Saya kerja full-time tapi tetap bisa ngaji tiap minggu.",
     rating: 5,
@@ -60,7 +60,7 @@ export function Rating() {
         subtitle="Dengar langsung dari santri dan orang tua santri Qurantiva."
       />
 
-      <section className="bg-accent-950 pb-20 lg:pb-28">
+      <section id="rating-gallery" className="bg-accent-950 pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-6 flex items-center justify-between">
             <p className="text-base font-semibold text-accent-400">

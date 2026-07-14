@@ -46,7 +46,6 @@ const FOOTER_SECTIONS = [
     links: [
       { name: CONTACTS.email, href: `mailto:${CONTACTS.email}` },
       { name: CONTACTS.waPrimaryDisplay, href: `https://wa.me/${CONTACTS.waPrimary}` },
-      { name: CONTACTS.waAltDisplay, href: `https://wa.me/${CONTACTS.waAlt}` },
     ],
   },
 ];

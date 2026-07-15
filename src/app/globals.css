@@ -103,10 +103,10 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
 }
 
 body {
+  overflow-x: clip;
   background: var(--color-cream);
   color: var(--color-accent-900);
   font-family: var(--font-sans);

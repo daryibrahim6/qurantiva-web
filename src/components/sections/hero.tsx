@@ -64,17 +64,17 @@ export function Hero() {
               </ShimmerButton>
             </div>
 
-            <div className="mt-12 flex items-center gap-6">
+            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4">
               <div className="flex flex-col">
                 <p className="text-3xl font-bold text-primary-500 sm:text-4xl">Ummi</p>
                 <p className="mt-1 text-sm text-accent-300">Metode Ngaji</p>
               </div>
-              <div className="h-12 w-px bg-accent-700" />
+              <div className="hidden h-12 w-px bg-accent-700 sm:block" />
               <div className="flex flex-col">
                 <p className="text-3xl font-bold text-primary-500 sm:text-4xl">1-on-1</p>
                 <p className="mt-1 text-sm text-accent-300">Privat Eksklusif</p>
               </div>
-              <div className="h-12 w-px bg-accent-700" />
+              <div className="hidden h-12 w-px bg-accent-700 sm:block" />
               <div className="flex flex-col">
                 <p className="text-3xl font-bold text-primary-500 sm:text-4xl">Rp 25rb</p>
                 <p className="mt-1 text-sm text-accent-300">Kelas Starter</p>

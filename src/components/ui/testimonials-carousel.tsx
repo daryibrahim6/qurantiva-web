@@ -79,7 +79,7 @@ export function TestimonialsCarousel({
               <Quote className="size-12 text-primary-500/20" strokeWidth={1} />
             </div>
 
-            <div className="relative h-[320px] md:h-[300px]">
+            <div className="relative h-[320px] overflow-hidden md:h-[300px]">
               {testimonials.map((testimonial, index) => (
                 <Card
                   key={testimonial.id}

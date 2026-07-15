@@ -63,7 +63,7 @@ export function Features() {
                   )}
                 >
                   <div className="pointer-events-none z-10 flex flex-col gap-1">
-                    <Icon className="size-9 text-primary-600 transition-all duration-300 group-hover:scale-90" />
+                    <Icon className="size-9 text-primary-800 transition-all duration-300 group-hover:scale-90" />
                     <h3 className="mt-2 text-lg font-bold text-accent-900">
                       {feature.title}
                     </h3>

@@ -82,7 +82,7 @@ export function HowItWorks() {
                 )}
               >
                 <div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-primary-50">
-                  <Icon className="size-6 text-primary-600" />
+                  <Icon className="size-6 text-primary-800" />
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-accent-900">
                   {step.title}

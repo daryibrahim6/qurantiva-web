@@ -95,18 +95,30 @@ export function Footer() {
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
-                  {section.links.map((link) => (
+                  {section.links.map((link) => {
+                    const isExternal = link.href.startsWith("http") || link.href.startsWith("mailto");
+                    return (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
-                        target={link.href.startsWith("http") || link.href.startsWith("mailto") ? "_blank" : undefined}
-                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="text-base text-accent-300 transition-colors hover:text-primary-400"
-                      >
-                        {link.name}
-                      </a>
+                      {isExternal ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-base text-accent-300 transition-colors hover:text-primary-400"
+                        >
+                          {link.name}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="text-base text-accent-300 transition-colors hover:text-primary-400"
+                        >
+                          {link.name}
+                        </Link>
+                      )}
                     </li>
-                  ))}
+                    );
+                  })}
                 </ul>
               </div>
             ))}

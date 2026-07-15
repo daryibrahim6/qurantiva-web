@@ -38,7 +38,7 @@ export function FloatingWhatsApp() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-full bg-white px-4 py-3 text-sm font-medium text-accent-900 shadow-lg ring-1 ring-accent-100 transition-all hover:bg-accent-50"
           >
-            <Radio className="size-5 text-primary-600" />
+            <Radio className="size-5 text-primary-800" />
             Gabung Channel WA
           </a>
         </div>

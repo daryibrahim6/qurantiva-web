@@ -55,7 +55,7 @@ export function Pricing() {
                       {paket.price}
                     </span>
                     {paket.period && (
-                      <span className="text-base text-primary-600">
+                      <span className="text-base text-primary-800">
                         {paket.period}
                       </span>
                     )}
@@ -78,7 +78,7 @@ export function Pricing() {
                       key={feature}
                       className="flex items-start gap-2 text-base text-accent-700"
                     >
-                      <Check className="mt-0.5 size-4 shrink-0 text-primary-600" />
+                      <Check className="mt-0.5 size-4 shrink-0 text-primary-800" />
                       {feature}
                     </li>
                   ))}

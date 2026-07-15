@@ -101,7 +101,7 @@ Paket: ${data.paket}`;
     return (
       <div className="flex flex-col items-center py-8 text-center">
         <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-primary-100">
-          <CheckCircle2 className="size-8 text-primary-600" />
+          <CheckCircle2 className="size-8 text-primary-800" />
         </div>
         <h3 className="mb-2 text-xl font-bold text-accent-900">
           Pendaftaran Berhasil!

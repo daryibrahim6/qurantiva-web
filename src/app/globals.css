@@ -110,7 +110,6 @@ body {
   background: var(--color-cream);
   color: var(--color-accent-900);
   font-family: var(--font-sans);
-  overflow-x: hidden;
 }
 
 *:focus-visible {

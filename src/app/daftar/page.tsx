@@ -23,7 +23,7 @@ export default function DaftarPage() {
         <div className="mx-auto w-full max-w-2xl px-4 pt-28 pb-12 sm:px-6 lg:pt-32 lg:pb-20">
           <Link
             href="/"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-primary-600 transition-colors hover:text-primary-700"
+            className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-primary-800 transition-colors hover:text-primary-900"
           >
             <ArrowLeft className="size-4" />
             Kembali ke Beranda
@@ -40,14 +40,14 @@ export default function DaftarPage() {
           </div>
 
           <div className="rounded-2xl border border-accent-100 bg-white p-6 shadow-sm sm:p-8">
-            <Suspense fallback={<div className="py-8 text-center text-primary-600">Memuat form...</div>}>
+            <Suspense fallback={<div className="py-8 text-center text-primary-800">Memuat form...</div>}>
               <RegistrationForm />
             </Suspense>
           </div>
 
           <div className="mt-8 rounded-2xl border border-accent-100 bg-primary-50/50 p-6">
             <div className="mb-3 flex items-center gap-2">
-              <Shield className="size-5 text-primary-600" />
+              <Shield className="size-5 text-primary-800" />
               <h2 className="text-lg font-bold text-accent-900">
                 Kebijakan Privasi Qurantiva
               </h2>

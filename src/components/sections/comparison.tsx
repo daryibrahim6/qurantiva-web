@@ -46,7 +46,7 @@ export function Comparison() {
                       className="px-4 py-3 text-center"
                     >
                       {prog.values[fi] ? (
-                        <Check className="mx-auto size-5 text-primary-600" />
+                        <Check className="mx-auto size-5 text-primary-800" />
                       ) : (
                         <X className="mx-auto size-5 text-accent-300" />
                       )}

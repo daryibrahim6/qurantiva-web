@@ -43,7 +43,7 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
 
           if (visible[0]) {
             const id = visible[0].target.getAttribute("id");
-            const match = items.find((item) => item.url === `#${id}`);
+            const match = items.find((item) => item.url.replace(/^\//, "") === `#${id}`);
             if (match) setActiveTab(match.name);
           }
         },

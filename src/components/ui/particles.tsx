@@ -151,7 +151,7 @@ export function Particles({
   return (
     <div
       ref={mountRef}
-      className={`absolute top-0 left-0 w-full h-full pointer-events-none ${className}`}
+      className={`absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none ${className}`}
     />
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { CONTACTS, NAV_LINKS, PROGRAMS } from "@/lib/constants";
 import { FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 import { Mail, Radio } from "lucide-react";
@@ -97,6 +99,7 @@ export function Footer() {
                 <ul className="space-y-3">
                   {section.links.map((link) => {
                     const isExternal = link.href.startsWith("http") || link.href.startsWith("mailto");
+                    const isHashLink = link.href.startsWith("/#");
                     return (
                     <li key={link.name}>
                       {isExternal ? (
@@ -104,6 +107,19 @@ export function Footer() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="text-base text-accent-300 transition-colors hover:text-primary-400"
+                        >
+                          {link.name}
+                        </a>
+                      ) : isHashLink ? (
+                        <a
+                          href={link.href}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const id = link.href.replace(/^\//, "");
+                            document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                            history.pushState(null, "", id);
+                          }}
                           className="text-base text-accent-300 transition-colors hover:text-primary-400"
                         >
                           {link.name}

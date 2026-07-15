@@ -67,12 +67,20 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
     };
   }, [items]);
 
-  const handleClick = (name: string) => {
+  const handleClick = (e: React.MouseEvent, name: string, url: string) => {
+    e.preventDefault();
     setActiveTab(name);
     clickedRef.current = true;
     setTimeout(() => {
       clickedRef.current = false;
     }, 1000);
+
+    const id = url.replace(/^\//, "");
+    if (id.startsWith("#")) {
+      const el = document.querySelector(id);
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", id);
+    }
   };
 
   return (
@@ -92,7 +100,7 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
               <Link
                 key={item.name}
                 href={item.url}
-                onClick={() => handleClick(item.name)}
+                onClick={(e) => handleClick(e, item.name, item.url)}
                 aria-label={item.name}
                 className="group relative"
               >
@@ -140,7 +148,7 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
               <Link
                 key={item.name}
                 href={item.url}
-                onClick={() => handleClick(item.name)}
+                onClick={(e) => handleClick(e, item.name, item.url)}
                 aria-label={item.name}
                 className={cn(
                   "relative cursor-pointer text-base font-semibold px-5 py-2.5 rounded-full transition-colors",

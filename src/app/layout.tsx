@@ -81,7 +81,8 @@ export default function RootLayout({
     <html
       lang="id"
       suppressHydrationWarning
-      className={cn(jakartaSans.variable, amiri.variable, "h-full antialiased")}
+      data-scroll-behavior="smooth"
+      className={cn(jakartaSans.variable, amiri.variable, "h-full antialiased scroll-smooth")}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}
         <FloatingWhatsApp />

@@ -22,34 +22,49 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
   const clickedRef = useRef(false);
 
   useEffect(() => {
-    const sections = items
-      .map((item) => document.querySelector(item.url.replace(/^\//, "")))
-      .filter(Boolean) as HTMLElement[];
+    let observer: IntersectionObserver | null = null;
 
-    if (sections.length === 0) return;
+    const setupObserver = () => {
+      if (observer) observer.disconnect();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (clickedRef.current) return;
+      const sections = items
+        .map((item) => document.querySelector(item.url.replace(/^\//, "")))
+        .filter(Boolean) as HTMLElement[];
 
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (sections.length === 0) return;
 
-        if (visible[0]) {
-          const id = visible[0].target.getAttribute("id");
-          const match = items.find((item) => item.url === `#${id}`);
-          if (match) setActiveTab(match.name);
-        }
-      },
-      {
-        rootMargin: "-40% 0px -50% 0px",
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      },
-    );
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (clickedRef.current) return;
 
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+          if (visible[0]) {
+            const id = visible[0].target.getAttribute("id");
+            const match = items.find((item) => item.url === `#${id}`);
+            if (match) setActiveTab(match.name);
+          }
+        },
+        {
+          rootMargin: "-40% 0px -50% 0px",
+          threshold: [0, 0.25, 0.5, 0.75, 1],
+        },
+      );
+
+      sections.forEach((s) => observer!.observe(s));
+    };
+
+    setupObserver();
+
+    const mutationObserver = new MutationObserver(() => setupObserver());
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      mutationObserver.disconnect();
+      observer?.disconnect();
+    };
   }, [items]);
 
   const handleClick = (name: string) => {

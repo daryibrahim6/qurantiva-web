@@ -28,12 +28,11 @@ export function Navbar() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const els = DARK_SELECTORS
-      .map((s) => document.querySelector(s))
-      .filter(Boolean) as HTMLElement[];
-
     const check = () => {
       const y = 50;
+      const els = DARK_SELECTORS
+        .map((s) => document.querySelector(s))
+        .filter(Boolean) as HTMLElement[];
       setOverDark(els.some((el) => {
         const r = el.getBoundingClientRect();
         return r.top <= y && r.bottom > y;

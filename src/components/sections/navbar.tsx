@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Home, Sparkles, BookOpen, Tag, Users, HelpCircle } from "lucide-react";
@@ -22,7 +22,7 @@ export function Navbar() {
   const [overDark, setOverDark] = useState(true);
   const [ready, setReady] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const els = DARK_SELECTORS
       .map((s) => document.querySelector(s))
       .filter(Boolean) as HTMLElement[];

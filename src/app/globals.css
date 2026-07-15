@@ -101,10 +101,6 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow-x: clip;
   background: var(--color-cream);

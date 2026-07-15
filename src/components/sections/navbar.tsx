@@ -57,7 +57,7 @@ export function Navbar() {
             src="/assets/logo/logo-nav-lb.png"
             alt="Qurantiva"
             fill
-            sizes="100vw"
+            sizes="190px"
             className={cn(
               "object-cover object-left scale-[1.04] origin-left",
               overDark ? "opacity-100" : "opacity-0",
@@ -68,7 +68,7 @@ export function Navbar() {
             src="/assets/logo/logo-nav-dark.png"
             alt="Qurantiva"
             fill
-            sizes="100vw"
+            sizes="190px"
             className={cn(
               "object-cover object-left scale-x-[1.06] scale-y-[1.04] origin-left",
               overDark ? "opacity-0" : "opacity-100",

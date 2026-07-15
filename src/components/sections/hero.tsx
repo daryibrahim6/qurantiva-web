@@ -90,8 +90,9 @@ export function Hero() {
                 width={1080}
                 height={1350}
                 priority
+                fetchPriority="high"
                 className="h-[115%] w-auto -mt-[20%] object-contain"
-                sizes="(max-width: 1280px) 100vw, 50vw"
+                sizes="50vw"
               />
             </div>
           </div>

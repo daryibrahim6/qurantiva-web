@@ -62,9 +62,8 @@ export function Footer() {
                 src="/assets/logo/logo-light.png"
                 alt="Qurantiva"
                 fill
-                unoptimized
+                sizes="220px"
                 className="object-contain object-left"
-                priority
               />
             </Link>
             <p className="max-w-sm text-base leading-relaxed text-accent-300">

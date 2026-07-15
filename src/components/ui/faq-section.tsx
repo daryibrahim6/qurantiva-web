@@ -28,7 +28,7 @@ export function FAQSection({
   return (
     <section className={cn("w-full max-w-5xl mx-auto py-16 px-4", className)}>
       <div className="mb-10 text-center">
-        <p className="mb-2 text-sm font-medium tracking-wide text-primary-600">
+        <p className="mb-2 text-sm font-medium tracking-wide text-primary-700">
           {subtitle}
         </p>
         <h2 className="mb-3 text-3xl font-bold text-accent-900 sm:text-4xl">

@@ -118,7 +118,7 @@ function FaqProRow({
         <ChevronDown
           aria-hidden
           className={cn(
-            "mt-0.5 size-4 shrink-0 text-primary-600 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+            "mt-0.5 size-4 shrink-0 text-primary-700 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
             isOpen && "rotate-180",
           )}
         />

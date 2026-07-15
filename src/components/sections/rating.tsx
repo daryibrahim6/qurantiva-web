@@ -63,7 +63,7 @@ export function Rating() {
       <section id="rating-gallery" className="bg-accent-950 pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-base font-semibold text-accent-400">
+            <p className="text-base font-semibold text-accent-300">
               Tangkapan layar percakapan WhatsApp
             </p>
             <div className="flex gap-2">
@@ -114,14 +114,18 @@ export function Rating() {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={cn(
-                  "h-2 rounded-full transition-all duration-300",
-                  index === activeIndex
-                    ? "w-6 bg-primary-500"
-                    : "w-2 bg-accent-600 hover:bg-accent-500",
-                )}
+                className="flex size-6 items-center justify-center rounded-full"
                 aria-label={`Testimoni ${index + 1}`}
-              />
+              >
+                <span
+                  className={cn(
+                    "h-2 rounded-full transition-all duration-300",
+                    index === activeIndex
+                      ? "w-6 bg-primary-500"
+                      : "w-2 bg-accent-600 hover:bg-accent-500",
+                  )}
+                />
+              </button>
             ))}
           </div>
         </div>

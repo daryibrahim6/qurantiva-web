@@ -101,10 +101,10 @@ export function TestimonialsCarousel({
                           className="border-2 border-primary-500/10"
                         />
                         <div className="text-left">
-                          <h4 className="font-semibold text-white">
+                          <h3 className="font-semibold text-white">
                             {testimonial.name}
-                          </h4>
-                          <p className="text-sm text-accent-400">
+                          </h3>
+                          <p className="text-sm text-accent-300">
                             {testimonial.role}
                           </p>
                         </div>
@@ -144,24 +144,24 @@ export function TestimonialsCarousel({
 
             <div className="flex gap-2 md:flex-col">
               {testimonials.map((_, index) => (
-                <div
+                <button
                   key={index}
+                  type="button"
                   className={cn(
-                    "size-2 rounded-full transition-colors",
-                    index === activeIndex
-                      ? "bg-primary-500"
-                      : "bg-accent-600",
+                    "flex size-6 items-center justify-center rounded-full transition-colors",
                   )}
-                  role="button"
-                  tabIndex={0}
                   onClick={() => setActiveIndex(index)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      setActiveIndex(index);
-                    }
-                  }}
                   aria-label={`Go to testimonial ${index + 1}`}
-                />
+                >
+                  <span
+                    className={cn(
+                      "size-2 rounded-full transition-colors",
+                      index === activeIndex
+                        ? "bg-primary-500"
+                        : "bg-accent-600",
+                    )}
+                  />
+                </button>
               ))}
             </div>
 

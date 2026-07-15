@@ -115,7 +115,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col justify-between gap-4 border-t border-accent-800 py-6 text-sm text-accent-400 md:flex-row md:items-center">
+        <div className="mt-12 flex flex-col justify-between gap-4 border-t border-accent-800 py-6 text-sm text-accent-300 md:flex-row md:items-center">
           <p>&copy; {new Date().getFullYear()} Qurantiva.id. Semua hak dilindungi.</p>
           <ul className="flex gap-6">
             <li>

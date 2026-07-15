@@ -1,11 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { Home, Sparkles, BookOpen, Tag, Users, HelpCircle } from "lucide-react";
-import { TubelightNavBar } from "@/components/ui/tubelight-navbar";
 import { cn } from "@/lib/utils";
+
+const TubelightNavBar = dynamic(
+  () => import("@/components/ui/tubelight-navbar").then((m) => m.TubelightNavBar),
+  { ssr: false },
+);
 
 const NAV_ITEMS = [
   { name: "Beranda", url: "/#hero", icon: Home },

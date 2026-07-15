@@ -1,6 +1,16 @@
 "use client";
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
+import {
+  Scene,
+  PerspectiveCamera,
+  BufferGeometry,
+  Float32BufferAttribute,
+  PointsMaterial,
+  Points,
+  CanvasTexture,
+  WebGLRenderer,
+  FogExp2,
+} from "three";
 
 interface ParticlesProps {
   color?: string;
@@ -26,15 +36,16 @@ export function Particles({
     const isMobile = window.innerWidth < 768;
     const effectiveCount = isMobile ? Math.floor(particleCount / 4) : particleCount;
 
-    let camera: THREE.PerspectiveCamera;
-    let scene: THREE.Scene;
-    let material: THREE.PointsMaterial;
+    let camera: PerspectiveCamera;
+    let scene: Scene;
+    let material: PointsMaterial;
+    let geometry: BufferGeometry | undefined;
     let animationFrameId: number;
     let mouseX = 0;
     let mouseY = 0;
 
     const init = () => {
-      camera = new THREE.PerspectiveCamera(
+      camera = new PerspectiveCamera(
         55,
         window.innerWidth / window.innerHeight,
         2,
@@ -42,10 +53,10 @@ export function Particles({
       );
       camera.position.z = 1000;
 
-      scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0x000000, 0.001);
+      scene = new Scene();
+      scene.fog = new FogExp2(0x000000, 0.001);
 
-      const geometry = new THREE.BufferGeometry();
+      geometry = new BufferGeometry();
       const vertices: number[] = [];
 
       for (let i = 0; i < effectiveCount; i++) {
@@ -58,7 +69,7 @@ export function Particles({
 
       geometry.setAttribute(
         "position",
-        new THREE.Float32BufferAttribute(vertices, 3)
+        new Float32BufferAttribute(vertices, 3)
       );
 
       const sprite = (() => {
@@ -72,9 +83,9 @@ export function Particles({
         gradient.addColorStop(1, "rgba(255,255,255,0)");
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 64, 64);
-        return new THREE.CanvasTexture(canvas);
+        return new CanvasTexture(canvas);
       })();
-      material = new THREE.PointsMaterial({
+      material = new PointsMaterial({
         size: particleSize,
         sizeAttenuation: true,
         map: sprite,
@@ -83,10 +94,10 @@ export function Particles({
       });
       material.color.setStyle(color);
 
-      const particles = new THREE.Points(geometry, material);
+      const particles = new Points(geometry, material);
       scene.add(particles);
 
-      const renderer = new THREE.WebGLRenderer({
+      const renderer = new WebGLRenderer({
         antialias: !isMobile,
         alpha: true,
         powerPreference: "high-performance",
@@ -144,7 +155,11 @@ export function Particles({
         container.removeChild(renderer.domElement);
       }
 
-      if (material) material.dispose();
+      if (geometry) geometry.dispose();
+      if (material) {
+        material.map?.dispose();
+        material.dispose();
+      }
     };
   }, [color, particleCount, particleSize, animate]);
 

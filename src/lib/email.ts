@@ -71,10 +71,12 @@ export async function sendRegistrationEmail(data: {
     </div>
   `;
 
+  const sanitize = (str: string) => str.replace(/[\r\n]/g, "");
+
   await transporter.sendMail({
     from: `Qurantiva <${process.env.GMAIL_USER}>`,
     to: process.env.GMAIL_USER,
-    subject: `Pendaftaran Baru - ${data.nama} - ${data.paket}`,
+    subject: `Pendaftaran Baru - ${sanitize(data.nama)} - ${sanitize(data.paket)}`,
     html,
   });
 }

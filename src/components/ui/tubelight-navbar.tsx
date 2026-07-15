@@ -59,7 +59,9 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
     setupObserver();
 
     const mutationObserver = new MutationObserver(() => setupObserver());
-    mutationObserver.observe(document.body, { childList: true, subtree: true });
+    mutationObserver.observe(document.querySelector("main") ?? document.body, {
+      childList: true,
+    });
 
     return () => {
       mutationObserver.disconnect();

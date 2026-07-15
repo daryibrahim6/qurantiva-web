@@ -47,7 +47,7 @@ export function Methods() {
               )}
             >
               <div className="flex items-center justify-between">
-                <span className="text-4xl font-bold tabular-nums text-primary-600 transition-colors group-hover:text-primary-700">
+                <span className="text-4xl font-bold tabular-nums text-primary-800 transition-colors group-hover:text-primary-900">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="h-px w-12 bg-accent-200" />

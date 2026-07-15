@@ -53,7 +53,7 @@ export function Programs() {
                 </p>
                 <Link
                   href="/daftar"
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary-900 transition-colors hover:text-primary-800"
                 >
                   Pelajari lebih lanjut
                   <ArrowRight className="size-4" />

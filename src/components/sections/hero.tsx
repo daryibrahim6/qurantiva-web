@@ -1,9 +1,14 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { Particles } from "@/components/ui/particles";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+
+const Particles = dynamic(
+  () => import("@/components/ui/particles").then((m) => m.Particles),
+  { ssr: false },
+);
 
 export function Hero() {
   return (

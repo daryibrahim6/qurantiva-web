@@ -18,7 +18,7 @@ export function Cta() {
       className="relative overflow-hidden bg-accent-950 py-20 lg:py-28"
     >
       <Image
-        src="/assets/backgrounds/cta-bg.jpg"
+        src="/assets/backgrounds/cta-bg.webp"
         alt=""
         fill
         className="object-cover object-center"

@@ -3,8 +3,8 @@ import { Check } from "lucide-react";
 import { MENTOR_QUALITIES } from "@/lib/constants";
 
 const TUTOR_PHOTOS = [
-  "/assets/tutors/tutor-1.png",
-  "/assets/tutors/tutor-3.png",
+  "/assets/tutors/tutor-1.webp",
+  "/assets/tutors/tutor-3.webp",
 ];
 
 export function Mentors() {

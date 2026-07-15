@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { useEffect, useState } from "react";
 
 const Particles = dynamic(
   () => import("@/components/ui/particles").then((m) => m.Particles),
@@ -11,19 +12,25 @@ const Particles = dynamic(
 );
 
 export function Hero() {
+  const [showParticles, setShowParticles] = useState(false);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { setShowParticles(true); }, []);
+
   return (
     <section
       id="hero"
       aria-labelledby="hero-heading"
       className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-accent-950"
     >
-      <Particles
-        color="#fbbf24"
-        particleCount={8000}
-        particleSize={20}
-        animate={false}
-        className="z-0"
-      />
+      {showParticles && (
+        <Particles
+          color="#fbbf24"
+          particleCount={8000}
+          particleSize={20}
+          animate={false}
+          className="z-0"
+        />
+      )}
 
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-accent-950/40 via-accent-950/30 to-accent-950/80" />
 
@@ -78,7 +85,7 @@ export function Hero() {
           <div className="relative hidden lg:block">
             <div className="relative ml-auto flex h-full w-full max-w-3xl items-start justify-center overflow-hidden rounded-3xl bg-white/5 ring-1 ring-inset ring-white/10">
               <Image
-                src="/assets/hero/mentor.png"
+                src="/assets/hero/mentor.webp"
                 alt="Mentor pengajar Al-Qur'an Qurantiva"
                 width={1080}
                 height={1350}

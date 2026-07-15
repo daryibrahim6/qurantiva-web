@@ -5,9 +5,9 @@ import { PROGRAMS } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
 
 const PROGRAM_POSTERS = [
-  "/assets/programs/private.png",
-  "/assets/programs/starter.png",
-  "/assets/programs/berkelompok.png",
+  "/assets/programs/private.webp",
+  "/assets/programs/starter.webp",
+  "/assets/programs/berkelompok.webp",
 ];
 
 export function Programs() {

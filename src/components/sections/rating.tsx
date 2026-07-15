@@ -34,11 +34,11 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const TESTIMONI_IMAGES = [
-  "/assets/testimonials/screenshot-1.png",
-  "/assets/testimonials/screenshot-2.png",
-  "/assets/testimonials/screenshot-3.png",
-  "/assets/testimonials/screenshot-4.png",
-  "/assets/testimonials/screenshot-5.png",
+  "/assets/testimonials/screenshot-1.webp",
+  "/assets/testimonials/screenshot-2.webp",
+  "/assets/testimonials/screenshot-3.webp",
+  "/assets/testimonials/screenshot-4.webp",
+  "/assets/testimonials/screenshot-5.webp",
 ];
 
 export function Rating() {

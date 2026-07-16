@@ -80,8 +80,12 @@ export function TubelightNavBar({ items, className }: NavBarProps) {
     const id = url.replace(/^\//, "");
     if (id.startsWith("#")) {
       const el = document.querySelector(id);
-      el?.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.pushState(null, "", id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.pushState(null, "", id);
+      } else {
+        window.location.assign(url);
+      }
     }
   };
 

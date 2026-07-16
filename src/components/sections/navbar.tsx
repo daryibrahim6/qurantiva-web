@@ -59,7 +59,15 @@ export function Navbar() {
         "fixed left-12 top-[28px] z-50 hidden sm:block transition-opacity duration-300",
         ready ? "opacity-100" : "opacity-0",
       )}>
-        <Link href="/" className="relative block h-9 w-[190px] overflow-hidden">
+        <Link
+          href="/"
+          onClick={() => {
+            if (window.location.pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="relative block h-9 w-[190px] overflow-hidden"
+        >
           <Image
             src="/assets/logo/logo-nav-lb.png"
             alt="Qurantiva"

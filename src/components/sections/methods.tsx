@@ -15,7 +15,7 @@ export function Methods() {
           </p>
         </div>
 
-        <div className="grid auto-rows-[16rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-[16rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
           {/* Hero card: Metode Ummi */}
           <div className="relative flex flex-col justify-between overflow-hidden rounded-2xl bg-accent-950 p-7 sm:col-span-2">
             <div className="flex items-center gap-3">

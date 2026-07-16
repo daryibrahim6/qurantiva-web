@@ -47,9 +47,9 @@ export function Features() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
+        <div className="grid gap-6 xl:grid-cols-[1fr_340px]">
           {/* Bento grid - left */}
-          <div className="grid auto-rows-[17rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid auto-rows-[17rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {FEATURES.map((feature, index) => {
               const Icon = ICONS[feature.icon] ?? UserCheck;
               return (
@@ -78,7 +78,7 @@ export function Features() {
           </div>
 
           {/* Video - right, sticky */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <div className="sticky top-28 overflow-hidden rounded-2xl bg-accent-950">
               <video
                 ref={videoRef}

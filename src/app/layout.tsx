@@ -23,7 +23,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://qurantiva.id"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app",
+  ),
   title: "Qurantiva - Belajar Ngaji Online Privat 1-on-1",
   description:
     "Belajar ngaji online privat 1-on-1 bersama mentor hafidz bersertifikat. Jadwal fleksibel, mulai dari Rp 25.000.",

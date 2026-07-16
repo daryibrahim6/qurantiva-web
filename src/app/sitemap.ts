@@ -3,13 +3,13 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://qurantiva.id",
+      url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://qurantiva.id/daftar",
+      url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app"}/daftar`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

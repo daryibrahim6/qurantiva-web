@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Daftar sekarang di Qurantiva. Isi form pendaftaran dan mulai belajar ngaji online privat 1-on-1 bersama mentor terkurasi.",
   alternates: {
-    canonical: "https://qurantiva.id/daftar",
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app"}/daftar`,
   },
 };
 

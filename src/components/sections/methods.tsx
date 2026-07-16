@@ -43,7 +43,7 @@ export function Methods() {
               key={method.name}
               className={cn(
                 "group relative flex flex-col rounded-2xl border border-accent-100 bg-white p-6 transition-all hover:border-primary-300 hover:shadow-lg hover:shadow-primary-500/5",
-                index === 4 && "sm:col-span-3",
+                index === 4 && "xl:col-span-3",
               )}
             >
               <div className="flex items-center justify-between">

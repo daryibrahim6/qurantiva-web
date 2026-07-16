@@ -59,7 +59,7 @@ export function Features() {
                     "group relative flex flex-col justify-between rounded-2xl border border-accent-100 bg-cream p-5 transition-all duration-300",
                     "hover:border-primary-300 hover:shadow-lg hover:shadow-primary-500/5",
                     index === 0 && "sm:col-span-2",
-                    index === 5 && "sm:col-span-3",
+                    index === 5 && "xl:col-span-3",
                   )}
                 >
                   <div className="pointer-events-none z-10 flex flex-col gap-1">

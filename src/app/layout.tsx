@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://qurantiva.id"),
   title: "Qurantiva - Belajar Ngaji Online Privat 1-on-1",
   description:
-    "Platform pendidikan Al-Qur'an daring dengan metode privat 1-on-1 yang adaptif. Dipandu mentor hafidz bersertifikat, jadwal fleksibel, dan tanpa rasa minder.",
+    "Belajar ngaji online privat 1-on-1 bersama mentor hafidz bersertifikat. Jadwal fleksibel, mulai dari Rp 25.000.",
   keywords: [
     "belajar ngaji online",
     "mengaji online",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Qurantiva - Belajar Ngaji Online Privat 1-on-1",
     description:
-      "Platform pendidikan Al-Qur'an daring dengan metode privat 1-on-1 yang adaptif. Dipandu mentor hafidz bersertifikat, jadwal fleksibel, dan tanpa rasa minder.",
+      "Belajar ngaji online privat 1-on-1 bersama mentor hafidz bersertifikat. Jadwal fleksibel, mulai dari Rp 25.000.",
     type: "website",
     locale: "id_ID",
     url: "https://qurantiva.id",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Qurantiva - Belajar Ngaji Online Privat 1-on-1",
     description:
-      "Platform pendidikan Al-Qur'an daring dengan metode privat 1-on-1 yang adaptif. Dipandu mentor hafidz bersertifikat, jadwal fleksibel, dan tanpa rasa minder.",
+      "Belajar ngaji online privat 1-on-1 bersama mentor hafidz bersertifikat. Jadwal fleksibel, mulai dari Rp 25.000.",
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ export default function RootLayout({
               name: "Qurantiva",
               url: "https://qurantiva.id",
               description:
-                "Platform pendidikan Al-Qur'an daring dengan metode privat 1-on-1 yang adaptif. Dipandu mentor hafidz bersertifikat, jadwal fleksibel, dan tanpa rasa minder.",
+                "Belajar ngaji online privat 1-on-1 bersama mentor hafidz bersertifikat. Jadwal fleksibel, mulai dari Rp 25.000.",
               sameAs: ["https://instagram.com/qurantiva.id"],
             }),
           }}

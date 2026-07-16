@@ -20,7 +20,7 @@ export default function DaftarPage() {
     <>
       <Navbar />
       <main className="flex flex-1 flex-col bg-white">
-        <div className="mx-auto w-full max-w-2xl px-4 pt-28 pb-12 sm:px-6 lg:pt-32 lg:pb-20">
+        <div className="mx-auto w-full max-w-2xl px-4 pt-28 pb-28 sm:px-6 sm:pb-12 lg:pt-32 lg:pb-20">
           <Link
             href="/"
             className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-primary-800 transition-colors hover:text-primary-900"

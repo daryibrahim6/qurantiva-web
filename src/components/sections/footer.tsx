@@ -54,7 +54,7 @@ const FOOTER_SECTIONS = [
 
 export function Footer() {
   return (
-    <footer className="bg-accent-950 py-16 lg:py-24">
+    <footer className="bg-accent-950 pb-28 pt-16 sm:pb-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start">
           {/* Left: logo + description + socials */}
@@ -117,8 +117,13 @@ export function Footer() {
                           onClick={(e) => {
                             e.preventDefault();
                             const id = link.href.replace(/^\//, "");
-                            document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                            history.pushState(null, "", id);
+                            const el = document.querySelector(id);
+                            if (el) {
+                              el.scrollIntoView({ behavior: "smooth", block: "start" });
+                              history.pushState(null, "", id);
+                            } else {
+                              window.location.assign(link.href);
+                            }
                           }}
                           className="text-base text-accent-300 transition-colors hover:text-primary-400"
                         >

@@ -49,7 +49,7 @@ export function Features() {
 
         <div className="grid gap-6 xl:grid-cols-[1fr_340px]">
           {/* Bento grid - left */}
-          <div className="grid auto-rows-[17rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {FEATURES.map((feature, index) => {
               const Icon = ICONS[feature.icon] ?? UserCheck;
               return (

@@ -23,7 +23,7 @@ export function Certificates() {
           </p>
         </div>
 
-        <div className="grid auto-rows-[15rem] grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {CERTIFICATES.map((cert, index) => {
             const Icon = ICONS[index] ?? Award;
             return (

@@ -90,7 +90,7 @@ export const METHODS = [
 
 export const PRICING = [
   {
-    name: "Paket I",
+    name: "Paket Privat I",
     price: "Rp 150.000",
     originalPrice: "Rp 300.000",
     period: "/paket",
@@ -104,10 +104,10 @@ export const PRICING = [
       "Guru Ngaji Bersertifikat",
     ],
     highlight: false,
-    ctaText: "Pilih Paket I",
+    ctaText: "Pilih Paket Privat I",
   },
   {
-    name: "Paket II",
+    name: "Paket Privat II",
     price: "Rp 300.000",
     originalPrice: "Rp 600.000",
     period: "/paket",
@@ -122,10 +122,10 @@ export const PRICING = [
       "Diskon Pembelian Kedua",
     ],
     highlight: true,
-    ctaText: "Pilih Paket II",
+    ctaText: "Pilih Paket Privat II",
   },
   {
-    name: "Paket III",
+    name: "Paket Privat III",
     price: "Rp 400.000",
     originalPrice: "Rp 800.000",
     period: "/paket",
@@ -140,7 +140,7 @@ export const PRICING = [
       "Diskon Pembelian Kedua",
     ],
     highlight: false,
-    ctaText: "Pilih Paket III",
+    ctaText: "Pilih Paket Privat III",
   },
   {
     name: "Kelas Berkelompok",
@@ -356,9 +356,9 @@ export const PEKERJAAN_OPTIONS = [
 ];
 
 export const PAKET_OPTIONS = [
-  "Paket I: Rp 150.000",
-  "Paket II: Rp 300.000",
-  "Paket III: Rp 400.000",
+  "Paket Privat I: Rp 150.000",
+  "Paket Privat II: Rp 300.000",
+  "Paket Privat III: Rp 400.000",
   "Kelas Berkelompok: Rp 150.000",
   "Kelas Starter: Rp 25.000",
 ];

@@ -91,8 +91,7 @@ export const METHODS = [
 export const PRICING = [
   {
     name: "Paket Privat I",
-    price: "Rp 150.000",
-    originalPrice: "Rp 300.000",
+    price: "Rp 300.000",
     period: "/paket",
     features: [
       "4x pertemuan",
@@ -108,8 +107,7 @@ export const PRICING = [
   },
   {
     name: "Paket Privat II",
-    price: "Rp 300.000",
-    originalPrice: "Rp 600.000",
+    price: "Rp 600.000",
     period: "/paket",
     features: [
       "8x pertemuan",
@@ -119,15 +117,13 @@ export const PRICING = [
       "Laporan perkembangan",
       "Qurantiva Circle",
       "Guru Ngaji Bersertifikat",
-      "Diskon Pembelian Kedua",
     ],
     highlight: true,
     ctaText: "Pilih Paket Privat II",
   },
   {
     name: "Paket Privat III",
-    price: "Rp 400.000",
-    originalPrice: "Rp 800.000",
+    price: "Rp 800.000",
     period: "/paket",
     features: [
       "12x pertemuan",
@@ -137,15 +133,13 @@ export const PRICING = [
       "Laporan perkembangan",
       "Qurantiva Circle",
       "Guru Ngaji Bersertifikat",
-      "Diskon Pembelian Kedua",
     ],
     highlight: false,
     ctaText: "Pilih Paket Privat III",
   },
   {
     name: "Kelas Berkelompok",
-    price: "Rp 150.000",
-    originalPrice: "Rp 300.000",
+    price: "Rp 300.000",
     period: "/program",
     features: [
       "10x pertemuan",
@@ -185,22 +179,21 @@ export const COMPARISON = {
     "Tracker Bulanan",
     "Qurantiva Circle",
     "Guru Bersertifikat",
-    "Diskon Pembelian Kedua",
     "Placement Test",
     "Kelas Gratis",
   ],
   programs: [
     {
       name: "Private",
-      values: [true, true, true, true, true, true, true, true, false, false],
+      values: [true, true, true, true, true, true, true, false, false],
     },
     {
       name: "Berkelompok",
-      values: [false, false, true, true, false, true, true, false, false, false],
+      values: [false, false, true, true, false, true, true, false, false],
     },
     {
       name: "Starter",
-      values: [true, true, false, false, false, true, false, false, true, false],
+      values: [true, true, false, false, false, true, false, true, false],
     },
   ],
 };
@@ -229,7 +222,7 @@ export const COMMUNITY = [
   {
     icon: "Tag",
     title: "Diskon Eksklusif",
-    desc: "Dapatkan diskon gila-gilaan untuk pembelian paket privat sebagai anggota circle.",
+    desc: "Dapatkan diskon spesial untuk pembelian paket privat sebagai anggota circle.",
   },
   {
     icon: "Sparkles",
@@ -356,9 +349,9 @@ export const PEKERJAAN_OPTIONS = [
 ];
 
 export const PAKET_OPTIONS = [
-  "Paket Privat I: Rp 150.000",
-  "Paket Privat II: Rp 300.000",
-  "Paket Privat III: Rp 400.000",
-  "Kelas Berkelompok: Rp 150.000",
+  "Paket Privat I: Rp 300.000",
+  "Paket Privat II: Rp 600.000",
+  "Paket Privat III: Rp 800.000",
+  "Kelas Berkelompok: Rp 300.000",
   "Kelas Starter: Rp 25.000",
 ];

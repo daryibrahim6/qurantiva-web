@@ -60,16 +60,6 @@ export function Pricing() {
                       </span>
                     )}
                   </div>
-                  {paket.originalPrice && (
-                    <div className="flex items-center gap-2">
-                      <span className="text-base text-accent-400 line-through">
-                        {paket.originalPrice}
-                      </span>
-                      <span className="rounded-full bg-primary-500 px-2 py-0.5 text-xs font-bold text-accent-900">
-                        50% OFF
-                      </span>
-                    </div>
-                  )}
                 </div>
 
                 <ul className="mb-6 flex flex-1 flex-col gap-2">

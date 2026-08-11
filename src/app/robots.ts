@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app"}/sitemap.xml`,
+    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva.online"}/sitemap.xml`,
   };
 }

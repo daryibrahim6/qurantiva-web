@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva.online",
   ),
   title: "Qurantiva - Belajar Ngaji Online Privat 1-on-1",
   description:
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   publisher: "Qurantiva",
   alternates: {
     canonical:
-      process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app",
+      process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva.online",
   },
   openGraph: {
     title: "Qurantiva - Belajar Ngaji Online Privat 1-on-1",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       "Belajar ngaji online privat 1-on-1 bersama mentor hafidz bersertifikat. Jadwal fleksibel, mulai dari Rp 25.000.",
     type: "website",
     locale: "id_ID",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva.online",
     siteName: "Qurantiva",
   },
   twitter: {
@@ -96,7 +96,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
               name: "Qurantiva",
-              url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva-web.vercel.app",
+              url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qurantiva.online",
               description:
                 "Belajar ngaji online privat 1-on-1 bersama mentor hafidz bersertifikat. Jadwal fleksibel, mulai dari Rp 25.000.",
               sameAs: ["https://instagram.com/qurantiva.id"],

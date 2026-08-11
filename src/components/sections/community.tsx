@@ -22,13 +22,15 @@ export function Community() {
   return (
     <section id="community" aria-labelledby="community-heading" className="bg-accent-900 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 id="community-heading" className="text-3xl font-bold text-white sm:text-4xl">
-          Qurantiva Circle
-        </h2>
-        <p className="mt-3 max-w-2xl text-lg text-accent-300">
+        <div className="mb-12">
+          <h2 id="community-heading" className="text-3xl font-bold text-white sm:text-4xl">
+            Qurantiva Circle
+          </h2>
+          <p className="mt-3 max-w-3xl text-lg text-accent-300">
           Komunitas untuk yang pernah belajar di Qurantiva. Tempat berkembang
           bareng, bukan tempat pamer.
         </p>
+        </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {COMMUNITY.map((item) => {

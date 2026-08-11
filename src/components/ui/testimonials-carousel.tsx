@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 
 export interface Testimonial {
@@ -23,6 +24,7 @@ interface TestimonialsCarouselProps {
   testimonials?: Testimonial[];
   autoRotateInterval?: number;
   className?: string;
+  children?: ReactNode;
 }
 
 export function TestimonialsCarousel({
@@ -31,6 +33,7 @@ export function TestimonialsCarousel({
   testimonials = [],
   autoRotateInterval = 6000,
   className,
+  children,
 }: TestimonialsCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -58,8 +61,8 @@ export function TestimonialsCarousel({
       aria-labelledby="rating-heading"
       className={cn("bg-accent-950 py-20 lg:py-28", className)}
     >
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2
             id="rating-heading"
             className="text-3xl font-bold text-white sm:text-4xl"
@@ -67,7 +70,7 @@ export function TestimonialsCarousel({
             {title}
           </h2>
           {subtitle && (
-            <p className="mx-auto mt-3 max-w-2xl text-lg text-accent-300">
+            <p className="mx-auto mt-3 max-w-3xl text-lg text-accent-300">
               {subtitle}
             </p>
           )}
@@ -175,6 +178,8 @@ export function TestimonialsCarousel({
             </Button>
           </div>
         </div>
+
+        {children}
       </div>
     </section>
   );

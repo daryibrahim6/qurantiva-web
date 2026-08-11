@@ -38,11 +38,11 @@ export function Features() {
   return (
     <section id="features" aria-labelledby="features-heading" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
+        <div className="mb-12">
           <h2 id="features-heading" className="text-3xl font-bold text-accent-900 sm:text-4xl">
             Apa yang kamu dapat
           </h2>
-          <p className="mt-3 max-w-2xl text-lg text-accent-600">
+          <p className="mt-3 max-w-3xl text-lg text-accent-600">
             Semua yang kamu butuh buat belajar Al-Qur&apos;an dengan nyaman dan terstruktur.
           </p>
         </div>

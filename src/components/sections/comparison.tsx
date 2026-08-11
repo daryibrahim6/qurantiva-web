@@ -4,13 +4,13 @@ import { COMPARISON } from "@/lib/constants";
 export function Comparison() {
   return (
     <section id="comparison" aria-labelledby="comparison-heading" className="bg-cream py-20 lg:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12">
           <h2 id="comparison-heading" className="text-3xl font-bold text-accent-900 sm:text-4xl">
-            Bandingkan program
+            Tabel Keuntungan
           </h2>
-          <p className="mt-3 max-w-2xl text-lg text-accent-600">
-            Lihat apa yang kamu dapat di Qurantiva dibanding belajar mandiri.
+          <p className="mt-3 max-w-3xl text-lg text-accent-600">
+            Lihat apa yang kamu dapat di setiap program Qurantiva.
           </p>
         </div>
 
@@ -35,23 +35,31 @@ export function Comparison() {
               {COMPARISON.features.map((feature, fi) => (
                 <tr
                   key={feature}
-                  className="border-b border-accent-50 last:border-0 transition-colors hover:bg-primary-50/50"
+                  className="border-b border-accent-50 last:border-0"
                 >
                   <td className="px-4 py-3 text-base text-accent-700">
                     {feature}
                   </td>
-                  {COMPARISON.programs.map((prog) => (
-                    <td
-                      key={prog.name}
-                      className="px-4 py-3 text-center"
-                    >
-                      {prog.values[fi] ? (
-                        <Check className="mx-auto size-5 text-primary-800" />
-                      ) : (
-                        <X className="mx-auto size-5 text-accent-300" />
-                      )}
-                    </td>
-                  ))}
+                  {COMPARISON.programs.map((prog) => {
+                    const cell = prog.values[fi];
+                    return (
+                      <td
+                        key={prog.name}
+                        className="px-4 py-3 text-center align-top"
+                      >
+                        <div className="flex flex-col items-center gap-1">
+                          {cell.check ? (
+                            <Check className="size-5 text-green-600" />
+                          ) : (
+                            <X className="size-5 text-red-500" />
+                          )}
+                          {cell.note && (
+                            <span className="text-xs font-semibold text-primary-700">{cell.note}</span>
+                          )}
+                        </div>
+                      </td>
+                    );
+                  })}
                 </tr>
               ))}
             </tbody>

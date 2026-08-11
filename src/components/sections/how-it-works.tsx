@@ -41,7 +41,7 @@ export function HowItWorks() {
       className="bg-white py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2
             id="how-heading"
             className="text-3xl font-bold text-accent-900 sm:text-4xl"

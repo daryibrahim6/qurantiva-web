@@ -1,25 +1,27 @@
-import { Award, Building2, GraduationCap, Star } from "lucide-react";
+import { Award, Building2, GraduationCap, Star, BookOpen, Heart } from "lucide-react";
 import { CERTIFICATES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-const ICONS = [Award, Building2, GraduationCap, Star];
+const ICONS = [Award, BookOpen, Building2, GraduationCap, Star, Heart];
 const CARD_SPANS = [
-  "sm:col-span-2",
   "sm:col-span-1",
   "sm:col-span-1",
-  "sm:col-span-2",
+  "sm:col-span-1",
+  "sm:col-span-1",
+  "sm:col-span-1",
+  "sm:col-span-1",
 ];
 
 export function Certificates() {
   return (
     <section id="certificates" aria-labelledby="certificates-heading" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
+        <div className="mb-12">
           <h2 id="certificates-heading" className="text-3xl font-bold text-accent-900 sm:text-4xl">
             Sertifikasi &amp; almamater pengajar
           </h2>
-          <p className="mt-3 max-w-2xl text-lg text-accent-600">
-            Pesantren dan sertifikat yang dimiliki pengajar Qurantiva.
+          <p className="mt-3 max-w-3xl text-lg text-accent-600">
+            Kualitas dan kredibilitas yang bisa kamu percaya.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, Star } from "lucide-react";
+import { Check, Gift, Star } from "lucide-react";
 import { motion } from "motion/react";
 import { PRICING } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -10,12 +10,12 @@ export function Pricing() {
   return (
     <section id="pricing" aria-labelledby="pricing-heading" className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2 id="pricing-heading" className="text-3xl font-bold text-accent-900 sm:text-4xl">
-            Harga paket
+            HARGA PAKET
           </h2>
           <p className="mt-3 text-lg text-accent-600">
-            Mulai dari Rp 25.000. Kelas starter cuma buat coba-coba.
+            Pilihan Paket &amp; Investasi Belajar Ngaji Online
           </p>
         </div>
 
@@ -63,15 +63,22 @@ export function Pricing() {
                 </div>
 
                 <ul className="mb-6 flex flex-1 flex-col gap-2">
-                  {paket.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-2 text-base text-accent-700"
-                    >
-                      <Check className="mt-0.5 size-4 shrink-0 text-primary-800" />
-                      {feature}
-                    </li>
-                  ))}
+                  {paket.features.map((feature) => {
+                    const isGift = feature.startsWith("Akses Qurantiva Circle");
+                    return (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2 text-base text-accent-700"
+                      >
+                        {isGift ? (
+                          <Gift className="mt-0.5 size-4 shrink-0 text-primary-600" />
+                        ) : (
+                          <Check className="mt-0.5 size-4 shrink-0 text-primary-800" />
+                        )}
+                        {feature}
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <Link

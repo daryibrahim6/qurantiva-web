@@ -7,7 +7,7 @@ const faqsRight = FAQS.slice(mid).map((f) => ({ question: f.question, answer: f.
 
 export function Faq() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="bg-cream py-20 lg:py-28">
+    <section id="faq" aria-labelledby="faq-heading" className="bg-cream">
       <h2 id="faq-heading" className="sr-only">FAQ</h2>
       <FAQSection faqsLeft={faqsLeft} faqsRight={faqsRight} />
     </section>

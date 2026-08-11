@@ -26,14 +26,15 @@ export function Cta() {
       />
       <div className="absolute inset-0 bg-accent-900/85" />
 
-      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
         <h2
           id="cta-heading"
           className="text-3xl font-bold text-white sm:text-4xl"
         >
           Mulai ngaji minggu ini
         </h2>
-        <p className="mt-3 max-w-2xl text-xl text-accent-200">
+        <p className="mt-3 max-w-3xl text-xl text-accent-200">
           Daftar langsung atau tanya-tanya dulu via WhatsApp. Tim kami
           biasanya balas dalam 10 menit di jam aktif.
         </p>
@@ -92,6 +93,7 @@ export function Cta() {
             <FaWhatsapp className="size-5" />
             {CONTACTS.waPrimaryDisplay}
           </a>
+        </div>
         </div>
       </div>
     </section>

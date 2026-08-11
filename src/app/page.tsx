@@ -7,7 +7,6 @@ import { Programs } from "@/components/sections/programs";
 const Features = dynamic(() => import("@/components/sections/features").then((m) => m.Features));
 const Methods = dynamic(() => import("@/components/sections/methods").then((m) => m.Methods));
 const Rating = dynamic(() => import("@/components/sections/rating").then((m) => m.Rating));
-const Mentors = dynamic(() => import("@/components/sections/mentors").then((m) => m.Mentors));
 const Certificates = dynamic(() => import("@/components/sections/certificates").then((m) => m.Certificates));
 const Pricing = dynamic(() => import("@/components/sections/pricing").then((m) => m.Pricing));
 const Comparison = dynamic(() => import("@/components/sections/comparison").then((m) => m.Comparison));
@@ -27,7 +26,6 @@ export default function Home() {
         <Features />
         <Methods />
         <Rating />
-        <Mentors />
         <Certificates />
         <Pricing />
         <Comparison />

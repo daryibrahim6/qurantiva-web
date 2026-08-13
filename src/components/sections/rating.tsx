@@ -9,26 +9,34 @@ import { cn } from "@/lib/utils";
 const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    name: "Santri Qurantiva",
-    role: "Kelas Privat 1-on-1",
+    name: "Kak Gia",
+    role: "Kelas Starter",
     content:
-      "Anak saya jadi lebih semangat ngaji. Mentornya sabar banget dan bisa menyesuaikan tempo belajar.",
+      "Ikut kelas starter di Qurantiva seru, merasa dirangkul dan penilaiannya bukan judge dengan ekspresi negatif tapi riil dinilai sesuai dengan standar yang telah ditentukan. Pokoknya seru dan jadi paham sejauh mana tingkat bacaan Qur'an-ku. Sharing ilmunya asyik bgt nggak yang kaku, jadi penasaran belajar di Qurantiva selanjutnya.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Orang Tua Santri",
-    role: "Kelas Starter",
+    name: "Kak Anggra",
+    role: "Kelas Privat 1-on-1",
     content:
-      "Awalnya cuma coba kelas starter Rp 25rb, sekarang anak saya langsung lanjut paket bulanan. Worth it banget.",
+      "Alhamdulillah, selama ngaji di Qurantiva saya merasa sangat terbantu dalam proses belajar Al-Qur'an. Awalnya masih ada beberapa bacaan yang kurang tepat dan kadang masih ragu, tapi setelah belajar di sini Alhamdulillah saya jadi lebih paham dan lebih aware sama bacaan sendiri, terutama dari segi tajwid dan makhraj. Tutornya juga masyaAllah baik, sabar, dan enak banget diajak belajar. Kalau ada yang salah, langsung dikoreksi dan dijelasin sampai paham, jadi nggak takut buat salah atau bertanya.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Santri Dewasa",
-    role: "Kelas Berkelompok",
+    name: "Kak Zahra",
+    role: "Kelas Privat 1-on-1",
     content:
-      "Jadwal fleksibelnya bener-bener membantu. Saya kerja full-time tapi tetap bisa ngaji tiap minggu.",
+      "Saya baru 2 kali pertemuan, tapi sejauh ini pembelajaran sangat seru dan sangat mudah untuk dipahami. Pengajarnya juga asik sehingga penyampaian materinya dapat diterima dengan baik.",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Kak Nita",
+    role: "Kelas Privat 1-on-1",
+    content:
+      "Alhamdulillah saya bisa terbantu banget bisa membaca dan mengucapkan dengan cara yang benar. Cara penyampaian tutor sangat suka dan sabar banget. Masuk bgt sama saya yang harus telaten karena saya pelupa dan lelet. Metodenya mudah dipahami dan terarah. Alhamdulillah saya bisa ketemu dengan Qurantiva.",
     rating: 5,
   },
 ];

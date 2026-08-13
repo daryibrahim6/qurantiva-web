@@ -1,8 +1,8 @@
 export const CONTACTS = {
   instagram: "https://instagram.com/qurantiva.id",
   email: "qurantiva@gmail.com",
-  waPrimary: "6288231134417",
-  waPrimaryDisplay: "+62 882-3113-4417",
+  waPrimary: "62881026734955",
+  waPrimaryDisplay: "+62 881-0267-34955",
 };
 
 export const NAV_LINKS = [
@@ -160,7 +160,7 @@ export const PRICING = [
   {
     name: "Kelas Starter",
     price: "Rp. 25.000",
-    period: "/ 3 bulan",
+    period: "/ sesi",
     features: [
       "Sesi Privat 1-on-1",
       "1x Pertemuan",

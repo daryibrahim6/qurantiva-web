@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -97,18 +97,21 @@ export function Rating() {
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[0, 1, 2].map((offset) => {
-              const itemIndex = (waIndex + offset) % waCount;
-              const item = WA_SCREENSHOTS[itemIndex];
-              return (
-                <motion.button
-                  key={`${waIndex}-${offset}`}
-                  onClick={() => setLightbox(item.src)}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-accent-700 bg-accent-900 text-left shadow-lg shadow-accent-950/50"
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.35, delay: offset * 0.08, ease: "easeOut" }}
-                >
+            <AnimatePresence mode="popLayout">
+              {[0, 1, 2].map((offset) => {
+                const itemIndex = (waIndex + offset) % waCount;
+                const item = WA_SCREENSHOTS[itemIndex];
+                return (
+                  <motion.button
+                    key={itemIndex}
+                    layout
+                    onClick={() => setLightbox(item.src)}
+                    className="group flex flex-col overflow-hidden rounded-2xl border border-accent-700 bg-accent-900 text-left shadow-lg shadow-accent-950/50"
+                    initial={{ opacity: 0, x: 60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -60 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                  >
                   <div className="flex h-[440px] items-center justify-center bg-accent-950">
                     <Image
                       src={item.src}
@@ -126,6 +129,7 @@ export function Rating() {
                 </motion.button>
               );
             })}
+            </AnimatePresence>
           </div>
 
           <div className="mt-4 flex justify-center gap-2">

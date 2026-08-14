@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -24,24 +24,17 @@ const WA_SCREENSHOTS = [
 
 export function Rating() {
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [waIndex, setWaIndex] = useState(0);
   const [lightbox, setLightbox] = useState<string | null>(null);
-  const waScrollRef = useRef<HTMLDivElement>(null);
 
   const photoCount = PROGRAM_PHOTOS.length;
+  const waCount = WA_SCREENSHOTS.length;
 
   const goPhotoPrev = useCallback(() => setPhotoIndex((p) => (p - 1 + photoCount) % photoCount), [photoCount]);
   const goPhotoNext = useCallback(() => setPhotoIndex((p) => (p + 1) % photoCount), [photoCount]);
 
-  const goWaPrev = useCallback(() => {
-    const el = waScrollRef.current;
-    if (!el) return;
-    el.scrollBy({ left: -el.clientWidth * 0.8, behavior: "smooth" });
-  }, []);
-  const goWaNext = useCallback(() => {
-    const el = waScrollRef.current;
-    if (!el) return;
-    el.scrollBy({ left: el.clientWidth * 0.8, behavior: "smooth" });
-  }, []);
+  const goWaPrev = useCallback(() => setWaIndex((p) => (p - 1 + waCount) % waCount), [waCount]);
+  const goWaNext = useCallback(() => setWaIndex((p) => (p + 1) % waCount), [waCount]);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -76,8 +69,87 @@ export function Rating() {
           </p>
         </div>
 
-        {/* Foto saat program — landscape slider */}
+        {/* Testimoni via WhatsApp — 3-card slider with loop */}
         <div>
+          <div className="flex items-end justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">Testimoni via WhatsApp</h3>
+              <p className="mt-2 max-w-3xl text-sm text-accent-300 sm:text-base">
+                Tangkapan layar percakapan langsung dari santri dan orang tua santri.
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={goWaPrev}
+                className="flex size-9 items-center justify-center rounded-full border border-accent-700 text-accent-300 transition-colors hover:bg-accent-800"
+                aria-label="Sebelumnya"
+              >
+                <ChevronLeft className="size-4" />
+              </button>
+              <button
+                onClick={goWaNext}
+                className="flex size-9 items-center justify-center rounded-full border border-accent-700 text-accent-300 transition-colors hover:bg-accent-800"
+                aria-label="Berikutnya"
+              >
+                <ChevronRight className="size-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[0, 1, 2].map((offset) => {
+              const itemIndex = (waIndex + offset) % waCount;
+              const item = WA_SCREENSHOTS[itemIndex];
+              return (
+                <motion.button
+                  key={offset}
+                  onClick={() => setLightbox(item.src)}
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-accent-700 bg-accent-900 text-left shadow-lg shadow-accent-950/50"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.4, delay: offset * 0.1 }}
+                >
+                  <div className="flex h-[440px] items-center justify-center bg-accent-950">
+                    <Image
+                      src={item.src}
+                      alt={`Testimoni WhatsApp dari ${item.name}`}
+                      width={1080}
+                      height={1920}
+                      className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="border-t border-accent-800 px-4 py-3">
+                    <p className="text-sm font-semibold text-white">{item.name}</p>
+                    <p className="text-xs text-accent-400">{item.role}</p>
+                  </div>
+                </motion.button>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex justify-center gap-2">
+            {WA_SCREENSHOTS.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setWaIndex(index)}
+                className="flex size-6 items-center justify-center rounded-full"
+                aria-label={`Testimoni ${index + 1}`}
+              >
+                <span
+                  className={cn(
+                    "h-2 rounded-full transition-all duration-300",
+                    index === waIndex ? "w-6 bg-primary-500" : "w-2 bg-accent-600 hover:bg-accent-500",
+                  )}
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Foto saat program — landscape slider with loop */}
+        <div className="mt-16">
           <div className="flex items-end justify-between">
             <div>
               <h3 className="text-xl font-bold text-white sm:text-2xl">Foto saat program</h3>
@@ -134,66 +206,6 @@ export function Rating() {
                   )}
                 />
               </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Testimoni via WhatsApp — horizontal scroll-snap slider */}
-        <div className="mt-16">
-          <div className="flex items-end justify-between">
-            <div>
-              <h3 className="text-xl font-bold text-white sm:text-2xl">Testimoni via WhatsApp</h3>
-              <p className="mt-2 max-w-3xl text-sm text-accent-300 sm:text-base">
-                Tangkapan layar percakapan langsung dari santri dan orang tua santri.
-              </p>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={goWaPrev}
-                className="flex size-9 items-center justify-center rounded-full border border-accent-700 text-accent-300 transition-colors hover:bg-accent-800"
-                aria-label="Sebelumnya"
-              >
-                <ChevronLeft className="size-4" />
-              </button>
-              <button
-                onClick={goWaNext}
-                className="flex size-9 items-center justify-center rounded-full border border-accent-700 text-accent-300 transition-colors hover:bg-accent-800"
-                aria-label="Berikutnya"
-              >
-                <ChevronRight className="size-4" />
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={waScrollRef}
-            className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {WA_SCREENSHOTS.map((item, index) => (
-              <motion.button
-                key={item.src}
-                onClick={() => setLightbox(item.src)}
-                className="group flex w-full shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-accent-700 bg-accent-900 text-left shadow-lg shadow-accent-950/50 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-              >
-                <div className="flex h-[440px] items-center justify-center bg-accent-950">
-                  <Image
-                    src={item.src}
-                    alt={`Testimoni WhatsApp dari ${item.name}`}
-                    width={1080}
-                    height={1920}
-                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="border-t border-accent-800 px-4 py-3">
-                  <p className="text-sm font-semibold text-white">{item.name}</p>
-                  <p className="text-xs text-accent-400">{item.role}</p>
-                </div>
-              </motion.button>
             ))}
           </div>
         </div>

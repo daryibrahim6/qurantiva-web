@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -25,16 +25,18 @@ const WA_SCREENSHOTS = [
 export function Rating() {
   const [photoIndex, setPhotoIndex] = useState(0);
   const [waIndex, setWaIndex] = useState(0);
+  const [waDir, setWaDir] = useState(1);
+  const [photoDir, setPhotoDir] = useState(1);
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   const photoCount = PROGRAM_PHOTOS.length;
   const waCount = WA_SCREENSHOTS.length;
 
-  const goPhotoPrev = useCallback(() => setPhotoIndex((p) => (p - 1 + photoCount) % photoCount), [photoCount]);
-  const goPhotoNext = useCallback(() => setPhotoIndex((p) => (p + 1) % photoCount), [photoCount]);
+  const goPhotoPrev = useCallback(() => { setPhotoDir(-1); setPhotoIndex((p) => (p - 1 + photoCount) % photoCount); }, [photoCount]);
+  const goPhotoNext = useCallback(() => { setPhotoDir(1); setPhotoIndex((p) => (p + 1) % photoCount); }, [photoCount]);
 
-  const goWaPrev = useCallback(() => setWaIndex((p) => (p - 1 + waCount) % waCount), [waCount]);
-  const goWaNext = useCallback(() => setWaIndex((p) => (p + 1) % waCount), [waCount]);
+  const goWaPrev = useCallback(() => { setWaDir(-1); setWaIndex((p) => (p - 1 + waCount) % waCount); }, [waCount]);
+  const goWaNext = useCallback(() => { setWaDir(1); setWaIndex((p) => (p + 1) % waCount); }, [waCount]);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -96,47 +98,48 @@ export function Rating() {
             </div>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <AnimatePresence mode="popLayout">
+          <div className="mt-6 overflow-hidden">
+            <motion.div
+              key={waIndex}
+              initial={{ opacity: 0, x: waDir * 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            >
               {[0, 1, 2].map((offset) => {
                 const itemIndex = (waIndex + offset) % waCount;
                 const item = WA_SCREENSHOTS[itemIndex];
                 return (
-                  <motion.button
+                  <button
                     key={itemIndex}
-                    layout
                     onClick={() => setLightbox(item.src)}
                     className="group flex flex-col overflow-hidden rounded-2xl border border-accent-700 bg-accent-900 text-left shadow-lg shadow-accent-950/50"
-                    initial={{ opacity: 0, x: 60 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -60 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
                   >
-                  <div className="flex h-[440px] items-center justify-center bg-accent-950">
-                    <Image
-                      src={item.src}
-                      alt={`Testimoni WhatsApp dari ${item.name}`}
-                      width={1080}
-                      height={1920}
-                      className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="border-t border-accent-800 px-4 py-3">
-                    <p className="text-sm font-semibold text-white">{item.name}</p>
-                    <p className="text-xs text-accent-400">{item.role}</p>
-                  </div>
-                </motion.button>
-              );
-            })}
-            </AnimatePresence>
+                    <div className="flex h-[440px] items-center justify-center bg-accent-950">
+                      <Image
+                        src={item.src}
+                        alt={`Testimoni WhatsApp dari ${item.name}`}
+                        width={1080}
+                        height={1920}
+                        className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="border-t border-accent-800 px-4 py-3">
+                      <p className="text-sm font-semibold text-white">{item.name}</p>
+                      <p className="text-xs text-accent-400">{item.role}</p>
+                    </div>
+                  </button>
+                );
+              })}
+            </motion.div>
           </div>
 
           <div className="mt-4 flex justify-center gap-2">
             {WA_SCREENSHOTS.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setWaIndex(index)}
+                onClick={() => { setWaDir(index > waIndex ? 1 : -1); setWaIndex(index); }}
                 className="flex size-6 items-center justify-center rounded-full"
                 aria-label={`Testimoni ${index + 1}`}
               >
@@ -185,9 +188,9 @@ export function Rating() {
             <div className="relative h-[320px] w-full sm:h-[420px] lg:h-[500px]">
               <motion.div
                 key={photoIndex}
-                initial={{ opacity: 0, scale: 1.03 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                initial={{ opacity: 0, x: photoDir * 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                 className="absolute inset-0"
               >
                 <Image
@@ -206,7 +209,7 @@ export function Rating() {
             {PROGRAM_PHOTOS.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setPhotoIndex(index)}
+                onClick={() => { setPhotoDir(index > photoIndex ? 1 : -1); setPhotoIndex(index); }}
                 className="flex size-6 items-center justify-center rounded-full"
                 aria-label={`Foto ${index + 1}`}
               >

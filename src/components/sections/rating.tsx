@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -25,11 +25,23 @@ const WA_SCREENSHOTS = [
 export function Rating() {
   const [photoIndex, setPhotoIndex] = useState(0);
   const [lightbox, setLightbox] = useState<string | null>(null);
+  const waScrollRef = useRef<HTMLDivElement>(null);
 
   const photoCount = PROGRAM_PHOTOS.length;
 
   const goPhotoPrev = useCallback(() => setPhotoIndex((p) => (p - 1 + photoCount) % photoCount), [photoCount]);
   const goPhotoNext = useCallback(() => setPhotoIndex((p) => (p + 1) % photoCount), [photoCount]);
+
+  const goWaPrev = useCallback(() => {
+    const el = waScrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: -el.clientWidth * 0.8, behavior: "smooth" });
+  }, []);
+  const goWaNext = useCallback(() => {
+    const el = waScrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: el.clientWidth * 0.8, behavior: "smooth" });
+  }, []);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -126,21 +138,43 @@ export function Rating() {
           </div>
         </div>
 
-        {/* Testimoni via WhatsApp — masonry layout */}
+        {/* Testimoni via WhatsApp — horizontal scroll-snap slider */}
         <div className="mt-16">
-          <div className="mb-6">
-            <h3 className="text-xl font-bold text-white sm:text-2xl">Testimoni via WhatsApp</h3>
-            <p className="mt-2 max-w-3xl text-sm text-accent-300 sm:text-base">
-              Tangkapan layar percakapan langsung dari santri dan orang tua santri.
-            </p>
+          <div className="flex items-end justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">Testimoni via WhatsApp</h3>
+              <p className="mt-2 max-w-3xl text-sm text-accent-300 sm:text-base">
+                Tangkapan layar percakapan langsung dari santri dan orang tua santri.
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={goWaPrev}
+                className="flex size-9 items-center justify-center rounded-full border border-accent-700 text-accent-300 transition-colors hover:bg-accent-800"
+                aria-label="Sebelumnya"
+              >
+                <ChevronLeft className="size-4" />
+              </button>
+              <button
+                onClick={goWaNext}
+                className="flex size-9 items-center justify-center rounded-full border border-accent-700 text-accent-300 transition-colors hover:bg-accent-800"
+                aria-label="Berikutnya"
+              >
+                <ChevronRight className="size-4" />
+              </button>
+            </div>
           </div>
 
-          <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+          <div
+            ref={waScrollRef}
+            className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
             {WA_SCREENSHOTS.map((item, index) => (
               <motion.button
                 key={item.src}
                 onClick={() => setLightbox(item.src)}
-                className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border border-accent-700 bg-accent-900 text-left"
+                className="group flex shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-accent-700 bg-accent-900 text-left"
+                style={{ width: "min(85vw, 360px)" }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -152,7 +186,7 @@ export function Rating() {
                   width={1080}
                   height={1920}
                   className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 85vw, 360px"
                 />
                 <div className="border-t border-accent-800 px-4 py-3">
                   <p className="text-sm font-semibold text-white">{item.name}</p>

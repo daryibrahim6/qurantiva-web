@@ -70,7 +70,7 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-3">
           {STEPS.map((step) => {
             const Icon = step.icon;
             return (

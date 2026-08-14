@@ -57,7 +57,7 @@ export function Rating() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2
             id="rating-heading"
             className="text-3xl font-bold text-white sm:text-4xl"
@@ -102,13 +102,12 @@ export function Rating() {
               const item = WA_SCREENSHOTS[itemIndex];
               return (
                 <motion.button
-                  key={offset}
+                  key={`${waIndex}-${offset}`}
                   onClick={() => setLightbox(item.src)}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-accent-700 bg-accent-900 text-left shadow-lg shadow-accent-950/50"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.4, delay: offset * 0.1 }}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.35, delay: offset * 0.08, ease: "easeOut" }}
                 >
                   <div className="flex h-[440px] items-center justify-center bg-accent-950">
                     <Image
@@ -180,14 +179,22 @@ export function Rating() {
             onClick={() => setLightbox(PROGRAM_PHOTOS[photoIndex])}
           >
             <div className="relative h-[320px] w-full sm:h-[420px] lg:h-[500px]">
-              <Image
-                src={PROGRAM_PHOTOS[photoIndex]}
-                alt={`Foto program Qurantiva ${photoIndex + 1}`}
-                fill
-                className="object-cover transition-transform duration-300 hover:scale-[1.02]"
-                sizes="100vw"
-                priority
-              />
+              <motion.div
+                key={photoIndex}
+                initial={{ opacity: 0, scale: 1.03 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={PROGRAM_PHOTOS[photoIndex]}
+                  alt={`Foto program Qurantiva ${photoIndex + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+                  sizes="100vw"
+                  priority
+                />
+              </motion.div>
             </div>
           </div>
 

@@ -34,7 +34,7 @@ export function Cta() {
         >
           Mulai ngaji minggu ini
         </h2>
-        <p className="mt-3 max-w-3xl text-xl text-accent-200">
+        <p className="mt-3 max-w-3xl text-lg text-accent-200">
           Daftar langsung atau tanya-tanya dulu via WhatsApp. Tim kami
           biasanya balas dalam 10 menit di jam aktif.
         </p>

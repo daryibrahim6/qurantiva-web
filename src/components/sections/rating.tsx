@@ -173,21 +173,22 @@ export function Rating() {
               <motion.button
                 key={item.src}
                 onClick={() => setLightbox(item.src)}
-                className="group flex shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-accent-700 bg-accent-900 text-left"
-                style={{ width: "min(85vw, 360px)" }}
+                className="group flex w-full shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-accent-700 bg-accent-900 text-left shadow-lg shadow-accent-950/50 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <Image
-                  src={item.src}
-                  alt={`Testimoni WhatsApp dari ${item.name}`}
-                  width={1080}
-                  height={1920}
-                  className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
-                  sizes="(max-width: 640px) 85vw, 360px"
-                />
+                <div className="flex h-[440px] items-center justify-center bg-accent-950">
+                  <Image
+                    src={item.src}
+                    alt={`Testimoni WhatsApp dari ${item.name}`}
+                    width={1080}
+                    height={1920}
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
                 <div className="border-t border-accent-800 px-4 py-3">
                   <p className="text-sm font-semibold text-white">{item.name}</p>
                   <p className="text-xs text-accent-400">{item.role}</p>

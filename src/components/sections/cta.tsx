@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Mail, ArrowRight, Radio } from "lucide-react";
 import { CONTACTS } from "@/lib/constants";
 import { buildWaLink } from "@/lib/utils";
+import { trackEvent } from "@/lib/pixel";
 
 export function Cta() {
   const waLink = buildWaLink(
@@ -42,6 +45,7 @@ export function Cta() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap">
           <Link
             href="/daftar"
+            onClick={() => trackEvent("InitiateCheckout", { content_name: "Daftar kelas private" })}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-7 py-3.5 text-base font-semibold text-accent-900 shadow-lg transition-all duration-300 hover:bg-primary-400"
           >
             Daftar kelas private
@@ -51,6 +55,7 @@ export function Cta() {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("Contact", { content_name: "Chat WhatsApp - CTA" })}
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary-500/40 px-7 py-3.5 text-base font-semibold text-primary-500 transition-all duration-300 hover:bg-primary-500/10"
           >
             <FaWhatsapp className="size-5" />

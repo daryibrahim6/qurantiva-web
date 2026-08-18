@@ -5,6 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Radio, X } from "lucide-react";
 import { CONTACTS } from "@/lib/constants";
 import { buildWaLink } from "@/lib/utils";
+import { trackEvent } from "@/lib/pixel";
 
 const WA_CHANNEL_URL = "https://whatsapp.com/channel/0029VbCqE6gGE56os4JX7Y0h";
 
@@ -27,6 +28,7 @@ export function FloatingWhatsApp() {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("Contact", { content_name: "Chat WhatsApp - Floating" })}
             className="flex items-center gap-3 rounded-full bg-white px-4 py-3 text-sm font-medium text-accent-900 shadow-lg ring-1 ring-accent-100 transition-all hover:bg-accent-50"
           >
             <FaWhatsapp className="size-5 text-[#25D366]" />

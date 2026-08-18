@@ -5,6 +5,7 @@ import { Check, Gift, Star } from "lucide-react";
 import { motion } from "motion/react";
 import { PRICING } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/pixel";
 
 export function Pricing() {
   return (
@@ -83,6 +84,7 @@ export function Pricing() {
 
                 <Link
                   href={`/daftar?paket=${encodeURIComponent(paket.name)}`}
+                  onClick={() => trackEvent("InitiateCheckout", { content_name: paket.name })}
                   className={cn(
                     "inline-flex w-full items-center justify-center rounded-full px-4 py-3 text-base font-semibold transition-all hover:shadow-lg",
                     paket.highlight

@@ -8,6 +8,7 @@ import { Select } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { PEKERJAAN_OPTIONS, PAKET_OPTIONS, CONTACTS } from "@/lib/constants";
 import { buildWaLink } from "@/lib/utils";
+import { trackEvent } from "@/lib/pixel";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle2, Loader2, AlertCircle } from "lucide-react";
@@ -88,6 +89,7 @@ Paket: ${data.paket}`;
 
       const waLink = buildWaLink(CONTACTS.waPrimary, waMessage);
       window.open(waLink, "_blank");
+      trackEvent("Lead", { content_name: data.paket, content_category: "Pendaftaran" });
       setStatus("success");
     } catch (err) {
       setStatus("error");
